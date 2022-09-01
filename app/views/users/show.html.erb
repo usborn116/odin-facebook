@@ -1,0 +1,31 @@
+<h1>Users#show</h1>
+<h1>You are user:</h1>
+<p>Name: <% if @user.name %>
+    <%= @user.name %>
+    <% else %>
+    <%= "none" %>
+    <%end%>
+    </p>
+<p>Email: <%= @user.email %></p>
+<p>City: <% if @user.city %>
+    <%= @user.city %>
+    <% else %>
+    <%= "none" %>
+    <%end%>
+    </p>
+<p>State: <% if @user.state %>
+    <%= @user.state %>
+    <% else %>
+    <%= "none" %>
+    <%end%>
+    </p>
+<br>
+<%= image_tag @user.gravatar_url %>
+<br>
+<%= link_to "Edit your profile", edit_user_path(@user) %>
+<%= link_to 'Create post', new_post_path %>
+<h2> Posts </h2>
+<% current_user.posts.each do |post| %>
+    <%= post.body %>
+    <br>
+<%end%>
