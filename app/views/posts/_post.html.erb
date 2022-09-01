@@ -1,17 +1,12 @@
 <div id="<%= dom_id post %>">
   <p>
-    <strong>Body:</strong>
+    <strong>Post Content:</strong>
     <%= post.body %>
   </p>
 
   <p>
-    <strong>User:</strong>
-    <%= post.user_id %>
-  </p>
-
-  <p>
-    <strong>Comment count:</strong>
-    <%= post.comment_count %>
+    <strong>Author:</strong>
+    <%= post.user.name %>
   </p>
 
 </div>

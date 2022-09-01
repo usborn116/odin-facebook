@@ -1,8 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @post %>
+<h4>Likes: <%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></h4>
 <%= button_to 'Like', post_likes_path(@post), method: :post %>
-<p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+<h4>Comments:</h4>
+<p><%= @post.comments.count %> <%= (@post.comments.count) == 1 ? 'Comment' : 'Comments'%></p>
+<p><% @post.comments.each do |comment| %>
+  <%= comment.body %>
+  <p>by: <%= comment.user.name %></p>
+  <br>
+<%end%>
+<%= link_to 'Add a comment', new_post_comment_path(post_id: @post.id), method: :post %>
 
 <div>
   <%= link_to "Edit this post", edit_post_path(@post) %> |
