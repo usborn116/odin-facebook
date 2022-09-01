@@ -1,6 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @post %>
+<%= button_to 'Like', post_likes_path(@post), method: :post %>
+<p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 
 <div>
   <%= link_to "Edit this post", edit_post_path(@post) %> |
