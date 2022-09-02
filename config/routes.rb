@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get 'friends/index'
+  get 'friends/destroy'
+  resources :friend_requests
   resources :notifications
   resources :users
   resources :posts do
     resources :likes
     resources :comments
   end
-  devise_for :users, controllers: { registrations: 'users/registrations' }
+  get '/users/sign_out'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  root 'users#index'
+  root to: 'users#index'
   # Defines the root path route ("/")
   # root "articles#index"
 end

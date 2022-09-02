@@ -1,3 +1,9 @@
 <h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<% @users.each do |user| %>
+    <p><%= link_to user.name, user_path(user) %></p>
+    <% if user.friends.exclude?(current_user) && user != current_user && current_user.pending_friends.exclude?(user) %>
+        <%=button_to 'Send Request', friend_requests_path(user_id: current_user.id, friend_id: user.id), method: :post%>
+    <%end%>
+<%end%>
+<br>
 <%= link_to 'Your Profile', user_path(current_user.id)%>

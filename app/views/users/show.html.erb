@@ -29,3 +29,8 @@
     <%= post.body %>
     <br>
 <%end%>
+
+<h3> These are my friends</h3>
+<% @user.friends.each do |friend| %>
+    <%= link_to friend.name, user_path(friend)%>
+<%end%>

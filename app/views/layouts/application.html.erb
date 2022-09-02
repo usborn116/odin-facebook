@@ -13,7 +13,24 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= link_to 'My page', user_path(current_user)%>
+    <% if current_user %>
+      <%= link_to 'My page', user_path(current_user)%>
+      <%= link_to 'All Users', users_path %>
+      <%= button_to 'Log out', destroy_user_session_path, method: :get %>
+    <%end%>
+
+    <% rqsts = [] %>
+    <% for u in User.all%>
+      
+      <% for f in u.pending_friends %>
+        <% rqsts << f %>
+      <%end%>
+    <%end%>
+    <%if current_user && rqsts.include?(current_user) %>
+      <%= link_to 'You have friend requests!', friend_requests_path, method: :get%>
+    <%else%>
+      <p>You have no requests</p>
+    <%end%>
 
     <%= yield %>
   </body>

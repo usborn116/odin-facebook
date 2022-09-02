@@ -1,0 +1,11 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Friend requests</h1>
+
+<div id="friend_requests">
+  <% @incoming.each do |friend_request| %>
+    <%= friend_request.user.name %>
+    <%= button_to "Accept Request", friend_request_path(friend_request), method: :patch %>
+  <% end %>
+</div>
+
