@@ -5,6 +5,10 @@ ruby "3.0.3"
 
 gem 'gravtastic'
 
+gem 'omniauth-facebook'
+gem 'omniauth-rails_csrf_protection', '~> 1.0'
+
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
 
