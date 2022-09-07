@@ -9,6 +9,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection', '~> 1.0'
 
 gem "letter_opener", group: :development
+gem 'sendgrid-ruby'
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

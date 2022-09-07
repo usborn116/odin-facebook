@@ -32,3 +32,4 @@
 
 #ignore ENV variables
 /config/local_env.yml
+sendgrid.env
