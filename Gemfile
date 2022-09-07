@@ -8,6 +8,8 @@ gem 'gravtastic'
 gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection', '~> 1.0'
 
+gem "letter_opener", group: :development
+
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
